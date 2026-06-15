@@ -1,4 +1,4 @@
-const CACHE_NAME = 'karma-farmer-v1';
+const CACHE_NAME = 'karma-farmer-v2';
 const ASSETS = [
   'index.html',
   'css/base.css',
@@ -18,6 +18,7 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', (e) => {
+  self.skipWaiting(); // Force active activation
   e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS);
@@ -37,6 +38,7 @@ self.addEventListener('activate', (e) => {
       );
     })
   );
+  self.clients.claim(); // Claim active clients immediately
 });
 
 self.addEventListener('fetch', (e) => {
