@@ -13,6 +13,7 @@ const ASSETS = [
   'js/autofill.js',
   'js/app.js',
   'icon.svg',
+  'icon.png',
   'manifest.json'
 ];
 

@@ -1,0 +1,29 @@
+Reddit Karma Farmer - Overhaul Summary
+
+1. Premium Visual Redesign
+   - Background: AMOLED pure black (#000000).
+   - Panels: Dual-panel floating card structure (Sidebar + Main panel) with 2px borders and 24px rounded corners.
+   - Form Inputs: Material 3 outlined inputs with labels sitting on the upper border. Color-coded borders: green for subreddit and purple for prompt content.
+   - Trigger Button: Glowing pill-shaped generate button with soft teal drop-shadow.
+   - Output Card: Rich warm bronze gradient card. Serif (Playfair Display) font for titles, sans-serif (Inter) for body content.
+   - Robust Copy Button: Swapped copy icon implementation to a CSS mask pseudo-element to prevent icon deletion when text changes.
+
+2. Settings Page & Auto-Persistence
+   - Settings view added to the sidebar navigation.
+   - Standard inputs and settings views toggle cleanly.
+   - API key and model choices automatically load from and save to localStorage.
+
+3. Mobile Navigation & Spacing
+   - Sidebar moves to a floating bottom navigation bar on mobile (< 900px).
+   - Hides text, labels, and header. Displays only thick outline SVG icons (2.5px stroke width) and active indicator lines.
+   - Mobile navbar sticky top inheritance bug fixed.
+   - Overrode main container stretching height to prevent blank gaps inside the card. Spaced using outer margin-bottom.
+
+4. PWA Integration
+   - icon.svg: Standalone vector icon asset.
+   - manifest.json: Web application manifest.
+   - sw.js: Service worker caching local page assets for offline compatibility.
+   - iOS PWA support added.
+
+5. Git Push
+   - Repository initialized, config set, committed, and pushed successfully to https://github.com/CaptainBirdeloper/karmafarm branch 'main'.
