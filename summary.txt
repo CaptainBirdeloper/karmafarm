@@ -1,10 +1,11 @@
 Reddit Karma Farmer - Overhaul Summary
 
-1. Premium Visual Redesign
+1. Premium Visual Redesign & Action Toolbar
    - Background: AMOLED pure black (#000000).
    - Panels: Dual-panel floating card structure (Sidebar + Main panel) with 2px borders and 24px rounded corners.
    - Form Inputs: Material 3 outlined inputs with labels sitting on the upper border. Color-coded borders: green for subreddit and purple for prompt content.
-   - Trigger Button: Glowing pill-shaped generate button with soft teal drop-shadow.
+   - Inline Action Buttons: Moved Short/Long Reply and Generate Post buttons inside the prompt textarea card, styled as a right-aligned footer toolbar with a top divider line. This frees up massive vertical spacing and matches modern AI interfaces.
+   - Trigger Button: Compact pill-shaped generate button with soft teal drop-shadow.
    - Output Card: Rich warm bronze gradient card. Serif (Playfair Display) font for titles, sans-serif (Inter) for body content.
    - Robust Copy Button: Swapped copy icon implementation to a CSS mask pseudo-element to prevent icon deletion when text changes.
 
@@ -20,7 +21,7 @@ Reddit Karma Farmer - Overhaul Summary
    - Overrode main container stretching height to prevent blank gaps inside the card. Spaced using outer margin-bottom.
 
 4. PWA Integration
-   - icon.svg: Standalone vector icon asset.
+   - icon.svg & icon.png: Standalone vector and high-res app icon assets.
    - manifest.json: Web application manifest.
    - sw.js: Service worker caching local page assets for offline compatibility.
    - iOS PWA support added.
