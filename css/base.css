@@ -1,0 +1,78 @@
+/* base.css - Solid Design Tokens & Global Reset */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    /* Color Palette */
+    --bg: #000000;
+    --surface-dark: #111112;
+    --border: rgba(255, 255, 255, 0.08);
+    
+    /* Outlined Bento Highlights */
+    --accent-green: #2E6A4F;
+    --accent-purple: #7E608F;
+    --accent-yellow: #E9F542;
+    --accent-pink: #F5D6EB;
+    
+    /* Focus highlights */
+    --accent-green-focus: #4ade80;
+    --accent-purple-focus: #c084fc;
+    
+    /* Warm Bronze Output Box */
+    --bento-bronze: linear-gradient(135deg, #3a322c 0%, #201a18 100%);
+    --bento-bronze-solid: #2d2622;
+    --bento-bronze-border: rgba(94, 80, 71, 0.5);
+    
+    --text-primary: #FFFFFF;
+    --text-muted: #8E8E93;
+    
+    --error-bg: #220B0B;
+    --error-text: #FF6B6B;
+    --error-border: #4A1414;
+    
+    /* Layout & Sizing */
+    --radius-lg: 24px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
+    
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-serif: 'Playfair Display', Georgia, Cambria, "Times New Roman", Times, serif;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+/* Accessible Universal Focus Outlines */
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--bento-yellow);
+    outline-offset: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+
