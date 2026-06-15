@@ -265,13 +265,15 @@ header .subtitle {
     color: var(--text-primary);
 }
 
-/* Action Buttons / Generate Trigger */
+/* Action Buttons Toolbar inside Input Field */
 .actions-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    gap: 16px;
-    margin: 8px 0;
+    gap: 12px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 14px;
     width: 100%;
 }
 
@@ -279,10 +281,10 @@ header .subtitle {
     background: rgba(46, 106, 79, 0.12);
     border: 2px solid var(--accent-green);
     border-radius: 50px;
-    padding: 14px 28px;
+    padding: 10px 20px;
     color: #ffffff;
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
@@ -313,9 +315,9 @@ header .subtitle {
 }
 
 .btn-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
     color: var(--accent-green-focus);
 }
 

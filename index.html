@@ -96,6 +96,31 @@
                             <textarea id="postTextArea" class="input-control text-area" placeholder="Paste the Reddit post content here..." required></textarea>
                             <div class="fade-overlay"></div>
                         </div>
+
+                        <!-- Compact Action Buttons Toolbar inside Input Field -->
+                        <div class="actions-wrapper">
+                            <button type="button" id="shortReplyBtn" class="btn-pill btn-reply-short">
+                                <!-- SVG Sparkles Icon -->
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                                <span>Short Reply</span>
+                            </button>
+                            <button type="button" id="longReplyBtn" class="btn-pill btn-reply-long">
+                                <!-- SVG Sparkles Icon -->
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                                <span>Long Reply</span>
+                            </button>
+                            <button type="button" id="generatePostBtn" class="btn-pill btn-create-post hidden">
+                                <!-- SVG Sparkles Icon -->
+                                <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                                <span>Generate Post</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -126,31 +151,6 @@
                         <label for="modelSelect" class="input-label">Gemini Model</label>
                         <select id="modelSelect" class="input-control select-control" required></select>
                     </div>
-                </div>
-
-                <!-- Center Action Buttons -->
-                <div class="actions-wrapper">
-                    <button type="button" id="shortReplyBtn" class="btn-pill btn-reply-short">
-                        <!-- SVG Sparkles Icon -->
-                        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                        </svg>
-                        <span>Short Reply</span>
-                    </button>
-                    <button type="button" id="longReplyBtn" class="btn-pill btn-reply-long">
-                        <!-- SVG Sparkles Icon -->
-                        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                        </svg>
-                        <span>Long Reply</span>
-                    </button>
-                    <button type="button" id="generatePostBtn" class="btn-pill btn-create-post hidden">
-                        <!-- SVG Sparkles Icon -->
-                        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                        </svg>
-                        <span>Generate Post</span>
-                    </button>
                 </div>
 
                 <!-- Loading Spinner (Skeleton Bento Block) -->
