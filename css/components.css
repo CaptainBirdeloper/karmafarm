@@ -51,47 +51,43 @@ header .subtitle {
 }
 
 .btn-sidebar-mode {
-    background: transparent;
-    border: none;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid var(--border);
     color: var(--text-muted);
     font-family: var(--font-sans);
-    font-size: 1.05rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     cursor: pointer;
-    padding: 6px 0;
+    padding: 12px 18px;
+    border-radius: var(--radius-md);
     text-align: left;
     display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    width: max-content;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
     outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-sidebar-mode .nav-icon {
     display: none;
 }
 
+.btn-sidebar-mode:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
 .btn-sidebar-mode.active {
-    color: var(--text-primary);
+    color: #ffffff;
+    border-color: var(--accent-green-focus);
+    background-color: rgba(46, 106, 79, 0.12);
+    box-shadow: 0 0 12px rgba(74, 222, 128, 0.2);
 }
 
 .btn-sidebar-mode .mode-indicator {
-    display: block;
-    width: 24px;
-    height: 3px;
-    background-color: var(--accent-green-focus);
-    border-radius: 2px;
-    margin-top: 6px;
-    opacity: 0;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.btn-sidebar-mode.active .mode-indicator {
-    opacity: 1;
-    transform: scaleX(1);
+    display: none; /* Hide indicator line on desktop */
 }
 
 /* M3 Outlined Form Fields */
@@ -563,6 +559,20 @@ header .subtitle {
         align-items: center;
         justify-content: center;
         padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+    
+    .btn-sidebar-mode:hover {
+        border-color: transparent;
+        background-color: transparent;
+    }
+    
+    .btn-sidebar-mode.active {
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
     }
     
     .btn-sidebar-mode .nav-icon {
@@ -580,6 +590,7 @@ header .subtitle {
     }
     
     .btn-sidebar-mode .mode-indicator {
+        display: block; /* Show indicator line on mobile bottom nav */
         position: absolute;
         bottom: 8px;
         left: 50%;
