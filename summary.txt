@@ -4,6 +4,7 @@ Reddit Karma Farmer - Overhaul Summary
    - Background: AMOLED pure black (#000000).
    - Panels: Dual-panel floating card structure (Sidebar + Main panel) with 2px borders and 24px rounded corners.
    - Form Inputs: Material 3 outlined inputs with labels sitting on the upper border. Color-coded borders: green for subreddit and purple for prompt content.
+   - Outlined Sidebar Buttons: Redesigned plain text mode menu items into modern, thick outlined buttons (2px solid borders, rounded corners, subtle backgrounds) stretching 100% of the sidebar. Active buttons feature a green border, translucent green background, and a soft glow.
    - Inline Action Buttons: Moved Short/Long Reply and Generate Post buttons inside the prompt textarea card, styled as a right-aligned footer toolbar with a top divider line. This frees up massive vertical spacing and matches modern AI interfaces.
    - Trigger Button: Compact pill-shaped generate button with soft teal drop-shadow.
    - Output Card: Rich warm bronze gradient card. Serif (Playfair Display) font for titles, sans-serif (Inter) for body content.
