@@ -9,7 +9,7 @@
     <!-- PWA & Metadata -->
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/svg+xml" href="icon.svg">
-    <meta name="theme-color" content="#111112">
+    <meta name="theme-color" content="#111111">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Karma Farmer">
@@ -23,26 +23,47 @@
     <link rel="stylesheet" href="css/autofill.css">
 </head>
 <body>
+    <!-- Newsprint Monospace Ticker -->
+    <div class="marquee-ticker">
+        <div class="marquee-content">
+            <span>BREAKING NEWS: REDDIT KARMA FARMER ONLINE</span>
+            <span class="marquee-badge-red">●</span>
+            <span>SUGGESTED SUBREDDITS: r/AskReddit, r/gaming, r/todayilearned, r/pics, r/movies</span>
+            <span class="marquee-badge-red">●</span>
+            <span>API CLIENT-SIDE DIRECT SECURE PIPELINE</span>
+            <span class="marquee-badge-red">●</span>
+            <span>EDITION: VOL 1.0</span>
+            <span class="marquee-badge-red">●</span>
+            <!-- Seamless looping duplicate -->
+            <span>BREAKING NEWS: REDDIT KARMA FARMER ONLINE</span>
+            <span class="marquee-badge-red">●</span>
+            <span>SUGGESTED SUBREDDITS: r/AskReddit, r/gaming, r/todayilearned, r/pics, r/movies</span>
+            <span class="marquee-badge-red">●</span>
+            <span>API CLIENT-SIDE DIRECT SECURE PIPELINE</span>
+            <span class="marquee-badge-red">●</span>
+            <span>EDITION: VOL 1.0</span>
+            <span class="marquee-badge-red">●</span>
+        </div>
+    </div>
+
     <div class="app-layout">
         <!-- Sidebar Configuration on the Left -->
         <aside class="app-sidebar">
             <header>
                 <div class="logo-wrapper">
-                    <svg class="header-logo" viewBox="0 0 100 100" width="72" height="72">
-                        <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="4" />
-                        <path class="logo-path" d="M30 50 C 30 35, 45 35, 50 50 C 55 65, 70 65, 70 50 C 70 35, 55 35, 50 50 C 45 65, 30 65, 30 50 Z" 
-                              fill="none" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-                        <defs>
-                            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="var(--accent-green)" />
-                                <stop offset="50%" stop-color="var(--accent-yellow)" />
-                                <stop offset="100%" stop-color="var(--accent-purple)" />
-                            </linearGradient>
-                        </defs>
+                    <!-- Monogram Newsprint Stamp Logo -->
+                    <svg class="header-logo" viewBox="0 0 100 100" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="logo-path" x="5" y="5" width="90" height="90" fill="none" stroke="var(--foreground)" stroke-width="4"/>
+                        <rect x="12" y="12" width="76" height="76" fill="none" stroke="var(--foreground)" stroke-width="1.5"/>
+                        <text x="50%" y="68%" font-family="var(--font-serif-display)" font-size="52" font-weight="900" text-anchor="middle" fill="var(--foreground)">K</text>
                     </svg>
                 </div>
                 <h1>Karma Farmer</h1>
                 <p class="subtitle">Reddit Generation Suite</p>
+                <div class="masthead-edition">
+                    <span>Vol. I | Issue I</span>
+                    <span>June 2026</span>
+                </div>
             </header>
 
             <!-- Mode Selector inside Sidebar -->
@@ -50,21 +71,21 @@
                 <span class="sidebar-label">Select Mode</span>
                 <div class="mode-list">
                     <button type="button" id="modeReplyBtn" class="btn-sidebar-mode active">
-                        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
                         </svg>
                         <span class="nav-text">Generate Reply</span>
                         <span class="mode-indicator"></span>
                     </button>
                     <button type="button" id="modePostBtn" class="btn-sidebar-mode">
-                        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                         </svg>
                         <span class="nav-text">Create Post</span>
                         <span class="mode-indicator"></span>
                     </button>
                     <button type="button" id="modeSettingsBtn" class="btn-sidebar-mode">
-                        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -80,7 +101,7 @@
             <form id="karmaForm" class="content-form" novalidate>
                 <!-- Generation Inputs Group -->
                 <div id="generationFields" class="generation-fields">
-                    <!-- Subreddit (Material 3 Green Border) -->
+                    <!-- Subreddit -->
                     <div class="m3-field field-subreddit tile-subreddit">
                         <label for="subredditInput" class="input-label">Subreddit</label>
                         <div class="autocomplete-wrapper">
@@ -89,7 +110,7 @@
                         </div>
                     </div>
 
-                    <!-- Post Text / Description (Material 3 Purple Border) -->
+                    <!-- Post Text / Description -->
                     <div class="m3-field field-post-text tile-post-text">
                         <label id="postTextLabel" for="postTextArea" class="input-label">Post Text</label>
                         <div class="textarea-wrapper">
@@ -99,21 +120,21 @@
 
                         <!-- Compact Action Buttons Toolbar inside Input Field -->
                         <div class="actions-wrapper">
-                            <button type="button" id="shortReplyBtn" class="btn-pill btn-reply-short">
+                            <button type="button" id="shortReplyBtn" class="btn-pill btn-reply-short hard-shadow-hover">
                                 <!-- SVG Sparkles Icon -->
                                 <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                 </svg>
                                 <span>Short Reply</span>
                             </button>
-                            <button type="button" id="longReplyBtn" class="btn-pill btn-reply-long">
+                            <button type="button" id="longReplyBtn" class="btn-pill btn-reply-long hard-shadow-hover">
                                 <!-- SVG Sparkles Icon -->
                                 <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                 </svg>
                                 <span>Long Reply</span>
                             </button>
-                            <button type="button" id="generatePostBtn" class="btn-pill btn-create-post hidden">
+                            <button type="button" id="generatePostBtn" class="btn-pill btn-create-post hidden hard-shadow-hover">
                                 <!-- SVG Sparkles Icon -->
                                 <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -153,8 +174,8 @@
                     </div>
                 </div>
 
-                <!-- Loading Spinner (Skeleton Bento Block) -->
-                <div id="spinner" class="bento-tile tile-spinner hidden" aria-live="polite">
+                <!-- Loading Spinner (Mechanical Bento Block) -->
+                <div id="spinner" class="tile-spinner hidden" aria-live="polite">
                     <div class="skeleton-header">
                         <div class="skeleton-dot"></div>
                         <div class="skeleton-title"></div>
@@ -167,18 +188,18 @@
                 </div>
 
                 <!-- Error Box -->
-                <div id="errorBox" class="error-container tile-error hidden" role="alert"></div>
+                <div id="errorBox" class="error-container hidden" role="alert"></div>
 
-                <!-- Output Section (Solid Bronze Block) -->
+                <!-- Ornament Divider for Output section -->
+                <div class="ornament-divider">&#x2727; &#x2727; &#x2727;</div>
+
+                <!-- Output Section (Inverted Ink Block) -->
                 <section class="tile-output">
-                    <label for="outputBox" class="input-label output-label">Generated Output</label>
+                    <label for="outputBox" class="output-label">Generated Output</label>
                     <div class="output-wrapper">
                         <pre id="outputBox" class="output-box" tabindex="0"></pre>
                         <button type="button" id="copyBtn" class="btn-copy-icon hidden" aria-label="Copy output text">
-                            <!-- SVG Copy Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                            </svg>
+                            <!-- Copy icon will be injected via CSS mask -->
                         </button>
                     </div>
                     <div id="charCount" class="char-count">Characters: 0</div>

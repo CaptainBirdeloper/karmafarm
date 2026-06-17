@@ -4,8 +4,8 @@
   "description": "Generate human-like, karma-optimized Reddit replies and original posts.",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#111112",
+  "background_color": "#F9F9F7",
+  "theme_color": "#111111",
   "orientation": "portrait-primary",
   "icons": [
     {

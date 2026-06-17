@@ -1,4 +1,4 @@
-const CACHE_NAME = 'karma-farmer-v2';
+const CACHE_NAME = 'karma-farmer-v3';
 const ASSETS = [
   'index.html',
   'css/base.css',

@@ -31,16 +31,33 @@ function displayReply(text) {
             outputBox.removeAttribute('data-raw-text');
         } else {
             outputBox.setAttribute('data-raw-text', text);
+            
+            // Helper to format with drop cap
+            const formatWithDropCap = (bodyText) => {
+                if (!bodyText) return '';
+                const firstCharMatch = bodyText.match(/[a-zA-Z]/);
+                if (!firstCharMatch) {
+                    const first = bodyText.charAt(0);
+                    const rest = bodyText.slice(1);
+                    return `<span class="drop-cap">${first}</span>${rest}`;
+                }
+                const idx = firstCharMatch.index;
+                const before = bodyText.slice(0, idx);
+                const char = bodyText.charAt(idx);
+                const after = bodyText.slice(idx + 1);
+                return `${before}<span class="drop-cap">${char}</span>${after}`;
+            };
+
             if (text.startsWith('Title:')) {
                 const lines = text.split('\n');
                 const titleLine = lines[0].replace('Title:', '').trim();
                 const bodyLines = lines.slice(1).join('\n').trim();
                 outputBox.innerHTML = `
                     <div class="generated-post-title">${titleLine}</div>
-                    <div class="generated-post-body">${bodyLines}</div>
+                    <div class="generated-post-body">${formatWithDropCap(bodyLines)}</div>
                 `;
             } else {
-                outputBox.innerHTML = `<div class="generated-post-body">${text}</div>`;
+                outputBox.innerHTML = `<div class="generated-post-body">${formatWithDropCap(text)}</div>`;
             }
         }
     }

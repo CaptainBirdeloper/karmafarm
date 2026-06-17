@@ -1,113 +1,125 @@
-/* animations.css - Hover Effects & Keyframe Transitions */
+/* animations.css - Snappy Mechanical Transitions & Print Keyframes */
 
-/* Pill Button Hover spring transitions */
-.btn-pill {
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                box-shadow 0.25s ease, 
-                background-color 0.25s ease, 
-                border-color 0.25s ease;
-}
-
-/* Copy Button Scale Effect */
+/* Snappy transitions (200ms ease-out, mechanical, no bounce) */
+.btn-pill,
+.btn-sidebar-mode,
+.btn-toggle,
+.m3-field,
 .btn-copy-icon {
-    transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-                color 0.15s ease;
+    transition: transform 0.15s ease-out,
+                box-shadow 0.15s ease-out,
+                background-color 0.15s ease-out,
+                border-color 0.15s ease-out,
+                color 0.15s ease-out;
 }
 
+/* Offset Hard Shadow Hover Effect */
+.hard-shadow-hover {
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.hard-shadow-hover:hover {
+    box-shadow: 4px 4px 0px 0px var(--foreground) !important;
+    transform: translate(-3px, -3px);
+}
+
+/* Red underline hover for textual buttons/links */
+.link-hover-underline:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+}
+
+/* Copy Button Animation */
 .btn-copy-icon.copied {
-    color: var(--accent-green-focus);
-    animation: copyFlash 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--accent);
+    border-color: var(--accent);
+    animation: copyStamp 0.25s steps(4) forwards;
 }
 
-/* Error Box Fade In */
+/* Error Container Fade In */
 .error-container:not(.hidden) {
-    animation: errorFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: alertFlash 0.3s steps(3) forwards;
 }
 
-/* Shimmer Loader Animations */
+/* Stepped mechanical loaders (no soft curves) */
 .tile-spinner:not(.hidden) .skeleton-title,
 .tile-spinner:not(.hidden) .skeleton-line {
-    animation: shimmerBg 1.5s infinite linear;
+    animation: steppedShimmer 1.8s steps(6) infinite;
 }
 
 .tile-spinner:not(.hidden) .skeleton-dot {
-    animation: pulseDot 1.5s ease-in-out infinite;
+    animation: mechanicalPulse 1.2s steps(2) infinite;
 }
 
-/* Keyframes */
-@keyframes errorFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes shimmerBg {
+/* Marquee Scroll Keyframes */
+@keyframes marquee-scroll {
     0% {
-        background-position: 200% 0;
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        background-position: -200% 0;
+        transform: translate3d(-50%, 0, 0); /* Loop seamlessly when combined with duplicated content */
     }
 }
 
-@keyframes pulseDot {
+/* Mechanical stamp animation (mimics printing press) */
+@keyframes copyStamp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15) rotate(-3deg);
+        background-color: var(--neutral-100);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes alertFlash {
+    0% {
+        opacity: 0.3;
+        border-style: dashed;
+    }
+    50% {
+        opacity: 0.7;
+        border-style: solid;
+    }
+    100% {
+        opacity: 1;
+        border-style: solid;
+    }
+}
+
+@keyframes steppedShimmer {
     0%, 100% {
-        opacity: 0.4;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: var(--neutral-100);
+    }
+    50% {
+        background-color: var(--neutral-200);
+    }
+}
+
+@keyframes mechanicalPulse {
+    0%, 100% {
+        opacity: 0.3;
+        background-color: var(--neutral-400);
     }
     50% {
         opacity: 1;
-        background-color: var(--accent-green-focus);
+        background-color: var(--accent);
     }
 }
 
-@keyframes copyFlash {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.25);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Focus and hover transitions on general controls */
-.m3-field,
-.btn-sidebar-mode,
-.btn-toggle,
-.advanced-settings-accordion {
-    transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
-                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
-                background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Logo Path Animations */
+/* Fast logo ink bleed animation */
 .logo-path {
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
-    transform-origin: center;
-    animation: logoDraw 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
-               logoFloat 6s ease-in-out infinite alternate 2s;
+    animation: inkBleed 1s ease-out forwards;
 }
 
-@keyframes logoDraw {
+@keyframes inkBleed {
     to {
         stroke-dashoffset: 0;
-    }
-}
-
-@keyframes logoFloat {
-    0% {
-        transform: rotate(0deg) scale(1);
-    }
-    100% {
-        transform: rotate(8deg) scale(1.05);
     }
 }
